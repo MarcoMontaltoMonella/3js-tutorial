@@ -23,19 +23,19 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
 // Create a Cube Mesh with basic material
-var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-var material = new THREE.MeshBasicMaterial( { color: "#433F81" } );
-var cube = new THREE.Mesh( geometry, material );
+var geometry = new THREE.TorusGeometry( 1, 0.4, 8, 6, 6.3 );
+var material = new THREE.MeshBasicMaterial( { color: "#0xffffff" } );
+var torus = new THREE.Mesh( geometry, material );
 
 // Add cube to Scene
-scene.add( cube );
+scene.add( torus );
 
 // Render Loop
 var render = function () {
   requestAnimationFrame( render );
 
-  cube.rotation.x += 0.01;
-  cube.rotation.y += 0.01;
+  torus.rotation.x += 0.01;
+  torus.rotation.y += 0.01;
    // Render the scene
    renderer.render(scene, camera);
 };
