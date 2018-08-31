@@ -24,8 +24,10 @@ document.body.appendChild( renderer.domElement );
 
 // Create a Cube Mesh with basic material
 var geometry = new THREE.TorusGeometry( 1, 0.4, 8, 6, 6.3 );
-var material = new THREE.MeshBasicMaterial( { color: "#0xffffff" } );
+var material = new THREE.MeshBasicMaterial( { color: "green" } );
 var torus = new THREE.Mesh( geometry, material );
+
+torus.material.wireframe = true;
 
 // Add cube to Scene
 scene.add( torus );
@@ -36,8 +38,9 @@ var render = function () {
 
   torus.rotation.x += 0.01;
   torus.rotation.y += 0.01;
-   // Render the scene
-   renderer.render(scene, camera);
+  
+  // Render the scene
+  renderer.render(scene, camera);
 };
 
 render();
