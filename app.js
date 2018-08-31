@@ -2,7 +2,12 @@
 var scene = new THREE.Scene();
 
 // Create a basic prospective camera
-var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+const fieldOfView = 75;
+const aspectRatio = window.innerWidth/window.innerHeight;
+const nearPlane = 0.1;
+const farPlane = 1000;
+
+var camera = new THREE.PerspectiveCamera(fieldOfView, aspectRatio, nearPlane, farPlane);
 camera.position.z = 4;
 
 // Create a renderer with Antialiasing
